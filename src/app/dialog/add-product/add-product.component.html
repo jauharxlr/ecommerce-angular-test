@@ -1,0 +1,25 @@
+<h2 mat-dialog-title>{{data==undefined?'Add':'Update'}} Product</h2>
+<mat-dialog-content>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-3">
+                    <label for="pname" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="pname" [(ngModel)]="request.name">
+                  </div>
+                  <div class="mb-3">
+                    <label for="pdescription" class="form-label">Description</label>
+                    <textarea type="text" class="form-control" id="pdescription" rows="5" maxlength="1500" [(ngModel)]="request.description"></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="pprice" class="form-label">Price</label>
+                    <input type="number" class="form-control" id="pprice" [(ngModel)]="request.price" [min]="0">
+                  </div>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button class="btn btn-primary mx-2" mat-dialog-close cdkFocusInitial>Cancel</button>
+  <button class="btn btn-primary" (click)="onAddProduct()">{{data==undefined?'Add':'Update'}} Product</button>
+</mat-dialog-actions>

@@ -1,0 +1,9 @@
+.logout-btn{
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgb(85, 85, 85);
+    height: 35px;
+}
+.username{
+    margin-right: 15px;;
+}

@@ -1,0 +1,77 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light  px-3 d-flex justify-content-between">
+    <a class="navbar-brand" href="#">Ecommerce</a>
+    <div class="d-flex justify-content-end">
+      <p class="username mt-3">Hello, {{loggedInUsername}}</p>
+      <button class="btn btn-dark mt-2" style="max-height: 35px; line-height: 20px;"
+        (click)="onLogout()">Logout</button>
+    </div>
+  </nav>
+</header>
+<section class="mt-5">
+
+  <div class="container">
+    <ng-container *ngIf="loggedInUserRole==='ADMIN'">
+      <div class="row">
+        <div class="col-12 text-end">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" (click)="onAddProduct()">
+            Add Product
+          </button>
+        </div>
+      </div>
+    </ng-container>
+    <div class="row mt-4" *ngIf="util.validateCollection(products)">
+      <div class="col-12">
+        <div class="mb-3">
+
+          <input type="text" placeholder="Search by name" class="form-control" id="search" [(ngModel)]="searchKey"
+            (keyup)="onSearch()">
+        </div>
+      </div>
+    </div>
+
+    <ng-container *ngIf="util.validateCollection(products); else noproducts">
+
+      <div class="row">
+        <div class="col-12">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+                <th scope="col">Updated On</th>
+                <th scope="col" *ngIf="loggedInUserRole==='ADMIN'">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of products; let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{item.name}}</td>
+                <td>{{item.description}}</td>
+                <td>${{item.price}}</td>
+                <td>{{item.updatedAt | date}}</td>
+                <ng-container *ngIf="loggedInUserRole==='ADMIN'">
+                  <td>
+                    <button class="btn" (click)="onEditProduct(item)"><i class="fa fa-pencil"></i></button>
+                    <button class="btn" (click)="onDelete(item.id)"><i class="fa fa-trash"></i></button>
+                  </td>
+                </ng-container>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #noproducts>
+      <p *ngIf="util.validateString(searchKey)">
+        No matching product found!
+      </p>
+      <p *ngIf="!util.validateString(searchKey)">
+        Please add products to list here...
+      </p>
+    </ng-template>
+  </div>
+</section>

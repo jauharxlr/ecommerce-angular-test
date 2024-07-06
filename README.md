@@ -1,27 +1,31 @@
-# EcommerceAngular
+<h1>Ecommerce Test Project</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.1.
+Considering this as a test project, only a limited number of features are included:
+<br/>
+<ul>
+<li>Integrated Bootstrap</li>
+<li>Integrated Angular Material</li>
+<li>Created a reusable rest service calls to channel all API calls</li>
+<li>Created a reusable adaptive state-management service with singleton pattern to reproduce redux like behaviour</li>
+<li>Configured authorisation token for secured API endpoints</li>
+<li>Implemented login, signup, logout features to test user service</li>
+<li>Implemented list, create, update, delete, filter feature for product service</li>
+<li>Implemented view encapsulation using angular specific directives</li>
+<li>Showcased usage of structural directives</li>
+<li>Added validations for all forms</li>
+<li>Implemented auth guard to block unauthorized access</li>
+<li>Configured routing for all pages.</li>
+</ul>
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**Local Setup**
+<ul>
+<li>cd to project root directory and run <code>npm i</code> </li>
+<li>run <code>ng s -o</code></li>
+</ul>
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**Default admin detail**<br/>
+<code>{
+    "emailId":"admin@ecommerce.com",
+    "password":"admin123"
+}</code>
