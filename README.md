@@ -5,7 +5,7 @@ Considering this as a test project, only a limited number of features are includ
 <ul>
 <li>Integrated Bootstrap</li>
 <li>Integrated Angular Material</li>
-<li>Created a reusable rest service calls to channel all API calls</li>
+<li>Created a reusable rest service class to channel all API calls</li>
 <li>Created a reusable adaptive state-management service with singleton pattern to reproduce redux like behaviour</li>
 <li>Configured authorisation token for secured API endpoints</li>
 <li>Implemented login, signup, logout features to test user service</li>
