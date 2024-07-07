@@ -15,6 +15,7 @@ Considering this as a test project, only a limited number of features are includ
 <li>Added validations for all forms</li>
 <li>Implemented auth guard to block unauthorized access</li>
 <li>Configured routing for all pages.</li>
+<li>User role based features. Only admin is allowed to create/edit/delete product</li>
 </ul>
 
 
